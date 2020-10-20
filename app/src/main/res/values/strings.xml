@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Quiz App</string>
     <string name="app_name2">Disney Quiz</string>
+    <string name="btn_start">START</string>
 </resources>
