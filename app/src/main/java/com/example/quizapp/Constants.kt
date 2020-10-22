@@ -18,7 +18,7 @@ object Constants {
         val que2 = Question (
             2,
             "Who is this?",
-            R.drawable.aurora,
+            R.drawable.aurora2,
             "Anastasia", "Alice",
             "Aurora", 3
         )
@@ -28,7 +28,7 @@ object Constants {
         val que3 = Question (
             3,
             "Who is this?",
-            R.drawable.belle,
+            R.drawable.belle2,
             "Belle", "Ella",
             "Ariel", 1
         )
@@ -38,7 +38,7 @@ object Constants {
         val que4 = Question (
             4,
             "Who is this?",
-            R.drawable.mulan,
+            R.drawable.mulan2,
             "Pocahontas", "Mulan",
             "Ling", 2
         )

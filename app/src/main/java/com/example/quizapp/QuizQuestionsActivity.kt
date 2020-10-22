@@ -38,10 +38,16 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener{
         // plats på frågorna minus 1 pga index börjar på 0
     }
     private fun setQuestions (){
-        mCurrentPosition = 1
+
         val question= mQuestionsList!![mCurrentPosition-1]
 
         defaultOptionsView()
+
+        if(mCurrentPosition== mQuestionsList!!.size){ //om vi är på sista frågan
+            btn_submit.text = "FINISH"
+        }else{
+            btn_submit.text = "SUBMIT"
+        }
 
         progressBar.progress = mCurrentPosition
         tv_progress.text = "$mCurrentPosition" + "/" + progressBar.max
@@ -55,7 +61,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener{
 
     }
 
-    private fun defaultOptionsView(){
+    private fun defaultOptionsView(){ // default view of options
         val options = ArrayList<TextView>()
         options.add(0, tv_opt_one)
         options.add(1, tv_opt_two)
@@ -84,9 +90,9 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener{
                     mCurrentPosition ++ // för att gå vidare till nästa fråga
 
                     when{
-                        mCurrentPosition <= mQuestionsList!!.size -> {
+                        mCurrentPosition <= mQuestionsList!!.size -> { //så länge det finns frågor
                             setQuestions()
-                        } else ->{
+                        } else ->{ //annars om frågorna är slut
                             Toast.makeText(this, "Congratulations! You have completed the Quiz",
                                 Toast.LENGTH_SHORT ).show()
                         }
@@ -98,6 +104,13 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener{
                         answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
                     }
                     answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
+
+                    if (mCurrentPosition == mQuestionsList!!.size){
+                        btn_submit.text = "FINISH"
+                    }else{
+                        btn_submit.text = "NEXT QUESTION"
+                    }
+                    mSelectedOptionPosition = 0
             }
 
             }
