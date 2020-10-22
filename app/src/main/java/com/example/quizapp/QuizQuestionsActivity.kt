@@ -1,5 +1,6 @@
 package com.example.quizapp
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -93,9 +94,11 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener{
                     when{
                         mCurrentPosition <= mQuestionsList!!.size -> { //så länge det finns frågor
                             setQuestions()
-                        } else ->{ //annars om frågorna är slut
-                            Toast.makeText(this, "Congratulations! You have completed the Quiz",
-                                Toast.LENGTH_SHORT ).show()
+                        } else ->{ //annars om frågorna är slut så går vi vidare till sista sidan
+                            val intent = Intent(this, ResultActivity::class.java)
+                        intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers) // och tar med antal rätt
+                        intent.putExtra(Constants.TOTAL_QUESTIONS,mQuestionsList!!.size) // av antal frågor
+                        startActivity(intent)
                         }
 
                     }
