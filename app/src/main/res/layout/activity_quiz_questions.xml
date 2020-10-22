@@ -1,9 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".QuizQuestionsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tv_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:gravity="center"
+            android:textColor="#0d0d0d"
+            android:textSize="25sp"
+            android:text="Who is this?"/>
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/disney_jasmine" />
+
+
+        <LinearLayout
+            android:id="@+id/progress_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            
+            <ProgressBar
+                android:id="@+id/progressbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="5"
+                android:minHeight="50dp"
+                android:progress="0"
+                android:indeterminate="false"
+                />
+            <TextView
+                android:id="@+id/tv_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:gravity="center"
+                android:textColorHint="#7A8089"
+                android:textSize="15sp"
+                tools:text="0/5?"/>
+
+            
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_opt_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="#7A8089"
+            android:textSize="20sp"
+            tools:text="a"/>
+
+        <TextView
+            android:id="@+id/tv_opt_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="#7A8089"
+            android:textSize="20sp"
+            tools:text="b"/>
+
+        <TextView
+            android:id="@+id/tv_opt_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="#7A8089"
+            android:textSize="20sp"
+            tools:text="c"/>
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/design_default_color_primary_dark"
+            android:text="SUBMIT"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+
+
+
+
+
+
+    </LinearLayout>
+
+
+    </ScrollView>
