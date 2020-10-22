@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_quiz_questions.*
 
@@ -15,6 +16,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener{
     private var mCurrentPosition:Int = 1
     private var mQuestionsList:ArrayList<Question>? = null
     private var mSelectedOptionPosition : Int = 0
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,6 +51,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener{
         tv_opt_one.text = question.optOne
         tv_opt_two.text = question.optTwo
         tv_opt_three.text = question.optThree
+        btn_submit.setOnClickListener(this)
 
     }
 
@@ -76,7 +79,45 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener{
             R.id.tv_opt_three -> {
                 selectedOptionView(tv_opt_three, 3)
             }
+            R.id.btn_submit ->{
+                if (mSelectedOptionPosition == 0){
+                    mCurrentPosition ++ // för att gå vidare till nästa fråga
 
+                    when{
+                        mCurrentPosition <= mQuestionsList!!.size -> {
+                            setQuestions()
+                        } else ->{
+                            Toast.makeText(this, "Congratulations! You have completed the Quiz",
+                                Toast.LENGTH_SHORT ).show()
+                        }
+
+                    }
+                }else {
+                    val question =mQuestionsList?.get(mCurrentPosition - 1)
+                    if (question!!.correctAnswer!= mSelectedOptionPosition){
+                        answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
+                    }
+                    answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
+            }
+
+            }
+
+
+        }
+        
+    }
+
+    private fun answerView(answer: Int, drawableView: Int){
+        when(answer){
+            1 ->{
+                tv_opt_one.background = ContextCompat.getDrawable(this, drawableView)
+            }
+            2 ->{
+                tv_opt_two.background = ContextCompat.getDrawable(this, drawableView)
+            }
+            3 ->{
+                tv_opt_three.background = ContextCompat.getDrawable(this, drawableView)
+            }
         }
     }
 
