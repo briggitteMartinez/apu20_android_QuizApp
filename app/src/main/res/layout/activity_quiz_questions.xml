@@ -27,9 +27,9 @@
 
         <ImageView
             android:id="@+id/iv_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/disney_jasmine" />
 
 
@@ -37,7 +37,7 @@
             android:id="@+id/progress_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
             
@@ -69,36 +69,36 @@
             android:id="@+id/tv_opt_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_margin="10dp"
             android:background="@drawable/default_option_border_bg"
             android:gravity="center"
             android:padding="15dp"
             android:textColor="#7A8089"
-            android:textSize="20sp"
+            android:textSize="10sp"
             tools:text="a"/>
 
         <TextView
             android:id="@+id/tv_opt_two"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_margin="10dp"
             android:background="@drawable/default_option_border_bg"
             android:gravity="center"
             android:padding="15dp"
             android:textColor="#7A8089"
-            android:textSize="20sp"
+            android:textSize="10sp"
             tools:text="b"/>
 
         <TextView
             android:id="@+id/tv_opt_three"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_margin="10dp"
             android:background="@drawable/default_option_border_bg"
             android:gravity="center"
             android:padding="15dp"
             android:textColor="#7A8089"
-            android:textSize="20sp"
+            android:textSize="10sp"
             tools:text="c"/>
 
         <Button
@@ -109,7 +109,7 @@
             android:background="@color/design_default_color_primary_dark"
             android:text="SUBMIT"
             android:textColor="@android:color/white"
-            android:textSize="20sp"
+            android:textSize="10sp"
             android:textStyle="bold"
             />
 
